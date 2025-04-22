@@ -2,6 +2,10 @@ name: Run Terraform
 on: 
     - workflow_dispatch
     - push
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   Terraform-Init:
     runs-on: ubuntu-latest
@@ -21,6 +25,6 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        
+
       - name: Terraform Plan
         run: terraform plan

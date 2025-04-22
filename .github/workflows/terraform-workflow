@@ -1,0 +1,16 @@
+name: Run Terraform
+on: 
+    - workflow_dispatch
+    - push
+jobs:
+  Terraform-Init:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Plan
+        run: terraform plan

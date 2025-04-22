@@ -8,9 +8,19 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: sts.amazonaws.com
+          aws-region: ap-south-1
+          role-to-assume: arn:aws:iam::992293216837:role/github-action-oidc-Role-xta7NbBBHjdI
+
       - name: Terraform Init
         run: terraform init
+        
       - name: Terraform Plan
         run: terraform plan

@@ -12,6 +12,6 @@ provider "aws" {
 }
 
 module "create_s3_bucket" {
-    source        = "./modules/S3"
+    source        = "./modules/s3"
     bucket_name   = var.bucket_name
 }

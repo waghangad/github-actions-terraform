@@ -11,6 +11,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-resource "aws_s3_bucket" "dic-prod-bucket" {
-  bucket = "just-created-for-tp"
+module "create_s3_bucket" {
+    source        = "./modules/S3"
+    bucket_name   = var.bucket_name
 }

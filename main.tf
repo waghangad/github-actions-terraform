@@ -33,7 +33,6 @@ module "eks" {
   cluster_endpoint_public_access = false
 
   cluster_addons = {
-    metrics-server = {}
   }
 
   # Optional: Adds the current caller identity as an administrator via cluster access entry

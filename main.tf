@@ -62,8 +62,8 @@ module "create_s3_bucket" {
 #     }
 #   }
 
-  tags = {
-    Environment = "dev"
-    Terraform   = "true"
-  }
-}
+#   tags = {
+#     Environment = "dev"
+#     Terraform   = "true"
+#   }
+# }

@@ -21,7 +21,7 @@ module "create_s3_bucket" {
 
 # EKS Auto mode 
 # -------------
-/*
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.31"
@@ -47,25 +47,24 @@ module "eks" {
   vpc_id     = "vpc-0f1ef7f44c5098ddb"
   subnet_ids = ["subnet-00c853ba29eb48d3c", "subnet-0b12c0cac23004261"]
 
-  access_entries = {
-    # One access entry with a policy associated
-    example = {
-      principal_arn = "arn:aws:iam::992293216837:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_5829ce699b803c1c"
+  # access_entries = {
+  #   # One access entry with a policy associated
+  #   example = {
+  #     principal_arn = "arn:aws:iam::992293216837:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_5829ce699b803c1c"
 
-      policy_associations = {
-        example = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
-          access_scope = {
-            type       = "cluster"
-          }
-        }
-      }
-    }
-  }
+  #     policy_associations = {
+  #       example = {
+  #         policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+  #         access_scope = {
+  #           type       = "cluster"
+  #         }
+  #       }
+  #     }
+  #   }
+  # }
 
   tags = {
     Environment = "dev"
     Terraform   = "true"
   }
 }
-*/

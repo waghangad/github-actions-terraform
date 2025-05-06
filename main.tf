@@ -41,7 +41,7 @@ module "eks" {
 
   cluster_compute_config = {
     enabled    = true
-    node_pools = ["general-purpose"]
+    node_pools = ["general-purpose", "system"]
   }
 
   vpc_id     = "vpc-0f1ef7f44c5098ddb"
